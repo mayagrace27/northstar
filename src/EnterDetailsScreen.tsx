@@ -2,7 +2,7 @@ import { RoomsRatesSiteHeader } from '@/components/RoomsRatesSiteHeader';
 import { ChargeDetailsDrawer } from '@/ChargeDetailsDrawer';
 import enterDetailsShieldUrl from '@/assets/bundled/enter-details-shield.svg?url';
 import { GUTTER } from '@/constants/layout';
-import { UI_INPUT_PROPS } from '@/constants/uiInputProps';
+import { DISPLAY_ONLY_INPUT_PROPS, displayOnlyInputStyle } from '@/constants/uiInputProps';
 import { colors, textStyles as typo } from '@/constants/typography';
 import { REVIEW_STAY_TRIP } from '@/constants/roomsRatesData';
 import type { RateRefundPolicy } from '@/navigation';
@@ -86,9 +86,9 @@ export default function EnterDetailsScreen({
               <ReqLabel text="Name on Card" />
               <input
                 type="text"
-                {...UI_INPUT_PROPS}
+                {...DISPLAY_ONLY_INPUT_PROPS}
                 className="review-details-input"
-                style={s.textInput}
+                style={{ ...s.textInput, ...displayOnlyInputStyle }}
               />
             </div>
 
@@ -96,10 +96,10 @@ export default function EnterDetailsScreen({
               <ReqLabel text="Card Number" />
               <input
                 type="text"
-                {...UI_INPUT_PROPS}
+                {...DISPLAY_ONLY_INPUT_PROPS}
                 inputMode="numeric"
                 className="review-details-input"
-                style={s.textInput}
+                style={{ ...s.textInput, ...displayOnlyInputStyle }}
               />
             </div>
 
@@ -109,9 +109,9 @@ export default function EnterDetailsScreen({
                   <ReqLabel text="Expiration" />
                   <input
                     type="text"
-                    {...UI_INPUT_PROPS}
+                    {...DISPLAY_ONLY_INPUT_PROPS}
                     className="review-details-input"
-                    style={s.textInput}
+                    style={{ ...s.textInput, ...displayOnlyInputStyle }}
                   />
                 </div>
               </div>
@@ -120,10 +120,10 @@ export default function EnterDetailsScreen({
                   <ReqLabel text="CVV" />
                   <input
                     type="text"
-                    {...UI_INPUT_PROPS}
+                    {...DISPLAY_ONLY_INPUT_PROPS}
                     inputMode="numeric"
                     className="review-details-input"
-                    style={s.textInput}
+                    style={{ ...s.textInput, ...displayOnlyInputStyle }}
                   />
                 </div>
               </div>
@@ -133,10 +133,10 @@ export default function EnterDetailsScreen({
               <ReqLabel text="Zip Code" />
               <input
                 type="text"
-                {...UI_INPUT_PROPS}
+                {...DISPLAY_ONLY_INPUT_PROPS}
                 inputMode="numeric"
                 className="review-details-input"
-                style={s.textInput}
+                style={{ ...s.textInput, ...displayOnlyInputStyle }}
               />
             </div>
           </form>

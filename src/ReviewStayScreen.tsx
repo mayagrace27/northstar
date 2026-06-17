@@ -12,9 +12,9 @@ import {
   type SelectedRoomReservation,
 } from '@/constants/roomsRatesData';
 import { colors, textStyles as typo } from '@/constants/typography';
-import { UI_INPUT_PROPS } from '@/constants/uiInputProps';
+import { DISPLAY_ONLY_INPUT_PROPS, displayOnlyInputStyle } from '@/constants/uiInputProps';
 import { goToEnterDetails, type RateRefundPolicy } from '@/navigation';
-import { useState, type CSSProperties } from 'react';
+import type { CSSProperties } from 'react';
 
 type ReviewStayScreenProps = {
   onContinueToDetails?: () => void;
@@ -27,11 +27,6 @@ export default function ReviewStayScreen({
   selectedRefundPolicy = 'non-refundable',
   selectedRoom,
 }: ReviewStayScreenProps) {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-
   const isRefundable = selectedRefundPolicy === 'refundable';
 
   return (
@@ -119,23 +114,19 @@ export default function ReviewStayScreen({
                 </div>
                 <input
                   type="text"
-                  {...UI_INPUT_PROPS}
+                  {...DISPLAY_ONLY_INPUT_PROPS}
                   placeholder="First Name"
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
                   className="review-details-input"
-                  style={s.detailsInput}
+                  style={{ ...s.detailsInput, ...displayOnlyInputStyle }}
                 />
               </div>
               <input
                 type="text"
-                {...UI_INPUT_PROPS}
+                {...DISPLAY_ONLY_INPUT_PROPS}
                 placeholder="Last Name"
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
                 aria-label="Last name"
                 className="review-details-input"
-                style={s.detailsInput}
+                style={{ ...s.detailsInput, ...displayOnlyInputStyle }}
               />
             </div>
 
@@ -148,11 +139,9 @@ export default function ReviewStayScreen({
               </div>
               <input
                 type="text"
-                {...UI_INPUT_PROPS}
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                {...DISPLAY_ONLY_INPUT_PROPS}
                 className="review-details-input"
-                style={s.detailsInput}
+                style={{ ...s.detailsInput, ...displayOnlyInputStyle }}
               />
             </div>
 
@@ -165,11 +154,9 @@ export default function ReviewStayScreen({
               </div>
               <input
                 type="text"
-                {...UI_INPUT_PROPS}
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
+                {...DISPLAY_ONLY_INPUT_PROPS}
                 className="review-details-input"
-                style={s.detailsInput}
+                style={{ ...s.detailsInput, ...displayOnlyInputStyle }}
               />
             </div>
             </form>
