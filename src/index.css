@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Nunito Sans', system-ui, sans-serif;
+}
+
+#root {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  overflow: hidden;
+  background: #f0f0f2;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-shell {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/**
+ * Horizontal scroll without visible scrollbar (Recommended + filter pills).
+ * Keeps touch/trackpad scroll; use on overflow-x: auto containers.
+ */
+.hideHorizontalScrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hideHorizontalScrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Coupon field: no focus ring / tap flash; placeholder removed — label via aria-label */
+.review-coupon-input {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.review-coupon-input:focus,
+.review-coupon-input:focus-visible {
+  outline: none;
+  box-shadow: none;
+  border-color: #bcbcc5;
+}
+
+/* Review Stay — Your Details (`1:3152`) */
+.review-details-input {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.review-details-input::placeholder {
+  color: #606068;
+}
+
+.review-details-input:focus,
+.review-details-input:focus-visible {
+  outline: none;
+  box-shadow: none;
+  border-color: #bcbcc5;
+}
